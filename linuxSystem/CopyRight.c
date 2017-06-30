@@ -25,10 +25,7 @@ void copy_frag(const char* srcfile, const char* dstfile, int start, int len)
     }
     fclose(fpi);
     fclose(fpo);
-
-
 }
-
 void  copyfile(int jobs,const char* srcfile, const char* dstfile)
 {
     int filesize = getfilesize(srcfile);
@@ -48,7 +45,6 @@ void  copyfile(int jobs,const char* srcfile, const char* dstfile)
     }
     //拷贝剩余的部分
     copy_frag(srcfile, dstfile, frag*i, filesize - frag*jobs);
-
     for(i = 0; i < jobs; ++i)
     {
         wait(NULL);
